@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>copy-24.png</file>
+        <file>copy-clicked-24.png</file>
+        <file>copy-96.png</file>
+        <file>copy-clicked-96.png</file>
+    </qresource>
+</RCC>

@@ -5,19 +5,16 @@
 #include <QStyleOptionGraphicsItem>
 
 Paddle::Paddle(int x, int y, int width, int height) :
-    m_position(x, y), m_size(width, height)
+    QGraphicsItem(nullptr), m_position(x, y), m_size(width, height)
 {
-}
-
-void Paddle::grab()
-{
-    grabKeyboard();
+    setPos(x, y);
+    setFlags(QGraphicsItem::ItemIsFocusable);
     setFocus();
 }
 
 QRectF Paddle::boundingRect() const
 {
-    return QRectF(m_position, m_size);
+    return QRectF(QPointF(0, 0), m_size);
 }
 
 void Paddle::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
@@ -30,13 +27,13 @@ void Paddle::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
 void Paddle::keyPressEvent(QKeyEvent *event)
 {
     switch(event->key()) {
-    case Qt::LeftArrow:
+    case Qt::Key_Left:
         qInfo("Left arrow paddle PRESSED");
-        m_position.setX(std::fmax(m_position.x() - 5, 0));
+        setPos(pos()+QPoint(-10,0));
         return;
-    case Qt::RightArrow:
+    case Qt::Key_Right:
         qInfo("Right arrow paddle PRESSED");
-        m_position.setX(std::fmin(m_position.x() + 5, sceneBoundingRect().right()));
+        setPos(pos()+QPoint(10,0));
         return;
     default:
         event->ignore();
@@ -47,14 +44,25 @@ void Paddle::keyPressEvent(QKeyEvent *event)
 void Paddle::keyReleaseEvent(QKeyEvent *event)
 {
     switch(event->key()) {
-    case Qt::LeftArrow:
+    case Qt::Key_Left:
         qInfo("Left arrow paddle RELEASED");
         return;
-    case Qt::RightArrow:
+    case Qt::Key_Right:
         qInfo("Right arrow paddle RELEASED");
         return;
     default:
+        qInfo() << "Received: " << event->key() << "\n";
         event->ignore();
         return;
     }
+}
+
+void Paddle::focusInEvent(QFocusEvent *event)
+{
+    qInfo("CRAZY");
+}
+
+void Paddle::focusOutEvent(QFocusEvent *event)
+{
+    qInfo("CRAZIER");
 }

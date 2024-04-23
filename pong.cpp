@@ -49,10 +49,9 @@ void Pong::connectToPeer()
 void Pong::setUpGame()
 {
     ui->swWindowsStack->setCurrentIndex(1);
-    ui->graphicsView->setScene(&scene);
+    ui->pongView->setScene(&scene);
     Paddle *pad = new Paddle(scene.sceneRect().bottom() - 80 - 40, (scene.sceneRect().left() - 20)/2 , 80, 20);
     scene.addItem(pad);
-    pad->grab();
 }
 
 void Pong::on_btnConnect_clicked()

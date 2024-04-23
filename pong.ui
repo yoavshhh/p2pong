@@ -142,7 +142,7 @@
           </size>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="pwMainMenu">
           <property name="maximumSize">
@@ -435,7 +435,7 @@ border-color: rgb(120, 120, 120);</string>
          <widget class="QWidget" name="pwPongWindow">
           <layout class="QVBoxLayout" name="verticalLayout_3">
            <item>
-            <widget class="PongView" name="graphicsView"/>
+            <widget class="PongView" name="pongView"/>
            </item>
           </layout>
          </widget>
@@ -467,7 +467,7 @@ border-color: rgb(120, 120, 120);</string>
  </customwidgets>
  <tabstops>
   <tabstop>btnOptions</tabstop>
-  <tabstop>graphicsView</tabstop>
+  <tabstop>pongView</tabstop>
   <tabstop>lineEdit</tabstop>
   <tabstop>btnConnect</tabstop>
   <tabstop>btnGenCode</tabstop>

@@ -1,8 +1,8 @@
 #ifndef DRAGGABLEWIDGET_H
 #define DRAGGABLEWIDGET_H
 
-#include <QWidget>
 #include <QMouseEvent>
+#include <QWidget>
 
 class DraggableWidget : public QWidget
 {

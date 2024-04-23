@@ -4,8 +4,10 @@
 #include <QPainter>
 #include <QStyleOptionGraphicsItem>
 
-Paddle::Paddle(int x, int y, int width, int height) :
-    QGraphicsItem(nullptr), m_position(x, y), m_size(width, height)
+Paddle::Paddle(int x, int y, int width, int height)
+    : QGraphicsItem(nullptr)
+    , m_position(x, y)
+    , m_size(width, height)
 {
     setPos(x, y);
     setFlags(QGraphicsItem::ItemIsFocusable);
@@ -26,14 +28,14 @@ void Paddle::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
 
 void Paddle::keyPressEvent(QKeyEvent *event)
 {
-    switch(event->key()) {
+    switch (event->key()) {
     case Qt::Key_Left:
         qInfo("Left arrow paddle PRESSED");
-        setPos(pos()+QPoint(-10,0));
+        setPos(pos() + QPoint(-10, 0));
         return;
     case Qt::Key_Right:
         qInfo("Right arrow paddle PRESSED");
-        setPos(pos()+QPoint(10,0));
+        setPos(pos() + QPoint(10, 0));
         return;
     default:
         event->ignore();
@@ -43,7 +45,7 @@ void Paddle::keyPressEvent(QKeyEvent *event)
 
 void Paddle::keyReleaseEvent(QKeyEvent *event)
 {
-    switch(event->key()) {
+    switch (event->key()) {
     case Qt::Key_Left:
         qInfo("Left arrow paddle RELEASED");
         return;

@@ -6,18 +6,22 @@
 
 Player::Player() {}
 
-Player::Player(const QString& username, int gamesPlayed) :
-    mUsername(username), mGamesPlayed(gamesPlayed) {}
+Player::Player(const QString &username, int gamesPlayed)
+    : mUsername(username)
+    , mGamesPlayed(gamesPlayed)
+{}
 
 bool Player::fromJson(const QJsonObject &json)
 {
     if (const QJsonValue v = json["username"]; v.isString())
         mUsername = v.toString();
-    else return false;
+    else
+        return false;
 
     if (const QJsonValue v = json["gamesPlayed"]; v.isDouble())
         mGamesPlayed = v.toInt();
-    else return false;
+    else
+        return false;
 
     return true;
 }
@@ -66,5 +70,3 @@ bool Player::savePlayer() const
 
     return true;
 }
-
-

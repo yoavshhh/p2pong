@@ -26,7 +26,7 @@ void UsernameDialog::reject()
         ui->lErrMsg->setText(QString("Username length is less than %1!").arg(USERNAME_MIN_LENGTH));
         return;
     }
-    for (const QChar& ch : username) {
+    for (const QChar &ch : username) {
         if (!ch.isPrint()) {
             ui->lErrMsg->setText("Username has to be printable!");
             return;
@@ -40,4 +40,3 @@ void UsernameDialog::reject()
     emit usernameResult(username);
     QDialog::reject();
 }
-

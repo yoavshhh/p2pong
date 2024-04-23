@@ -36,7 +36,8 @@ void Pong::newPlayer()
     usernameDialog.exec();
 }
 
-void Pong::handleUsernameResult(const QString &result) {
+void Pong::handleUsernameResult(const QString &result)
+{
     me.setUsername(result);
     ui->lUsername->setText(QString("username: %1").arg(me.username()));
 }
@@ -50,7 +51,10 @@ void Pong::setUpGame()
 {
     ui->swWindowsStack->setCurrentIndex(1);
     ui->pongView->setScene(&scene);
-    Paddle *pad = new Paddle(scene.sceneRect().bottom() - 80 - 40, (scene.sceneRect().left() - 20)/2 , 80, 20);
+    Paddle *pad = new Paddle(scene.sceneRect().bottom() - 80 - 40,
+                             (scene.sceneRect().left() - 20) / 2,
+                             80,
+                             20);
     scene.addItem(pad);
 }
 
@@ -81,4 +85,3 @@ void Pong::destroy()
     me.savePlayer();
     QMainWindow::destroy();
 }
-

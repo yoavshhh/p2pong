@@ -16,7 +16,6 @@ public:
     void focusInEvent(QFocusEvent *event) override;
     void focusOutEvent(QFocusEvent *event) override;
 
-
 private:
     QPointF m_position;
     QPointF m_size;

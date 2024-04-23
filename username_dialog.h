@@ -14,7 +14,7 @@ public:
     static const int USERNAME_MIN_LENGTH = 3;
 
 signals:
-    void usernameResult(const QString& result);
+    void usernameResult(const QString &result);
 
 public:
     explicit UsernameDialog(QWidget *parent = nullptr);

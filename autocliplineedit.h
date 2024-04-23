@@ -10,8 +10,10 @@ class AutoClipLineEdit : public QLineEdit
 public:
     explicit AutoClipLineEdit(QWidget *parent = nullptr);
     AutoClipLineEdit();
+
 protected:
     void focusInEvent(QFocusEvent *event) override;
+
 private:
     QClipboard *clipboard;
 };

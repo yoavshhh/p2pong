@@ -10,9 +10,9 @@ public:
     PongView();
     PongView(QWidget *parent = nullptr);
 
-// protected:
-//     void keyPressEvent(QKeyEvent *event) override;
-//     void keyReleaseEvent(QKeyEvent *event) override;
+    // protected:
+    //     void keyPressEvent(QKeyEvent *event) override;
+    //     void keyReleaseEvent(QKeyEvent *event) override;
 };
 
 #endif // PONGVIEW_H

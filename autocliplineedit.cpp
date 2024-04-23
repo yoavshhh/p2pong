@@ -3,18 +3,14 @@
 #include <QApplication>
 #include <QThread>
 
-AutoClipLineEdit::AutoClipLineEdit(QWidget *parent) :
-    QLineEdit(parent),
-    clipboard(QApplication::clipboard())
-{
+AutoClipLineEdit::AutoClipLineEdit(QWidget *parent)
+    : QLineEdit(parent)
+    , clipboard(QApplication::clipboard())
+{}
 
-}
-
-AutoClipLineEdit::AutoClipLineEdit() :
-    clipboard(QApplication::clipboard())
-{
-
-}
+AutoClipLineEdit::AutoClipLineEdit()
+    : clipboard(QApplication::clipboard())
+{}
 
 void AutoClipLineEdit::focusInEvent(QFocusEvent *event)
 {

@@ -5,11 +5,9 @@
 
 PongView::PongView() {}
 
-PongView::PongView(QWidget *parent) :
-    QGraphicsView(parent)
-{
-
-}
+PongView::PongView(QWidget *parent)
+    : QGraphicsView(parent)
+{}
 
 // void PongView::keyPressEvent(QKeyEvent *event)
 // {
